@@ -76,3 +76,11 @@
 .gap-10{
   gap: 10px;
 }
+
+.gap-20{
+  gap: 20px;
+}
+
+.hidden{
+  display: none;
+}
