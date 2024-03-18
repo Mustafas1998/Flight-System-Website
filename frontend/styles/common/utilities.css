@@ -61,9 +61,7 @@
   border-radius: 10px;
 }
 
-.padding-7-15{
-  padding: 7px 15px;
-}
+
 
 .no-bor{
   border: none;
@@ -73,6 +71,3 @@
   outline: none;
 }
 
-.gap-10{
-  gap: 10px;
-}
