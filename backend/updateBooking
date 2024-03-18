@@ -2,17 +2,12 @@
 include('connection.php');
 
 
-$user_id = $_POST["user_id"];
 $booking_id = $_POST["booking_id"];
 $valid = $_POST["valid"];
-$seat_number = $_POST["seat_number"];
-$flight_id =$_POST["flight_id"];
 
 
-
-
-$query = $mysqli->prepare("UPDATE bookings SET valid =?, seat_number = ?, user_id = ?, flight_id = ? WHERE booking_id = ? ");
-//$query->bind_param('iiiii',); 
+$query = $mysqli->prepare("UPDATE bookings SET valid =? WHERE booking_id = ? ");
+$query->bind_param('ii',$valid,$booking_id); 
 $query->execute();
 
 if ($query->affected_rows > 0) {

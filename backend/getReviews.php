@@ -6,9 +6,8 @@ $review_id= $_POST["user_id"];
 $flight_id=$_POST["flight_id"];
 
 $query = $mysqli->prepare(
-"SELECT * FROM reviews FROM reviews r
-JOIN users u ON r.user_id = u.user_id
-JOIN flights f ON r.flight_id = f.flight_id
+"SELECT review_text,rating  FROM reviews r
+
 WHERE u.user_id = ? AND f.flight_id = ?;"); 
 $query->bind_param( "ii",$user_id,$flight_id);
 $query->execute();
