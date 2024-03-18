@@ -38,5 +38,30 @@ a:hover{
   gap: 20px;
 }
 
+.footer-container{
+  background-color: #343434;
+  padding: 20px 80px;
+  height: 150px;
+}
 
+.copy-rights{
+  font-size: 12px;
+}
+
+.footer-nav{
+  gap: 25px;
+}
+
+.follow-us{
+  gap: 15px;
+}
+
+.follow-us h1{
+  font-size: 36px;
+}
+
+.fa-brands-container{
+  gap: 15px;
+  font-size: 32px;
+}
 
