@@ -1,4 +1,39 @@
 .header-container{
   background-color: rgb(25, 25, 25);
-  padding: 40px,80px;
+  padding: 20px 80px;
 }
+
+button{
+  padding: 10px;
+  width: 117px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #353535;
+}
+
+.signup-button{
+ border: 2px solid #C1FF9C;
+ background-color: rgba(255, 255, 255, 0);
+}
+
+.nav-header{
+  gap: 25px;
+}
+
+.nav-header a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px ;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+.nav-header a:hover{
+  border-bottom: 3px solid #C1FF9C;
+}
+
+.login-signup-wrapper{
+  gap: 20px;
+}
+
