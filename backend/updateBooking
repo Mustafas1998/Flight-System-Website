@@ -12,7 +12,7 @@ $flight_id =$_POST["flight_id"];
 
 
 $query = $mysqli->prepare("UPDATE bookings SET valid =?, seat_number = ?, user_id = ?, flight_id = ? WHERE booking_id = ? ");
-$query->bind_param('iiiii',); 
+//$query->bind_param('iiiii',); 
 $query->execute();
 
 if ($query->affected_rows > 0) {
