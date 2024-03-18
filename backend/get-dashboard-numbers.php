@@ -7,7 +7,7 @@ $users_query = $mysqli -> prepare("select count(*) from users");
 
 $response = [];
 
-function storeValueFromQuery ($key, $query, $response) {
+function storeValueFromQuery ($key, $query, &$response) {
   $query -> execute();
   $query -> store_result();
   $query -> bind_result($result);
