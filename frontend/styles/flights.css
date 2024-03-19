@@ -83,6 +83,9 @@ a:hover{
  .flight-cards-section{
     padding: 80px;
   }
+  main{
+    padding: 20px 80px;
+  }
   
   .flight-cards-section{
     background-color: #272727;
@@ -156,7 +159,10 @@ a:hover{
   }
 
 
-  .container-2{
-    gap: 20px;
-    padding: 20px;
+.container-2{
+   gap: 35px;
+
+   
+
   }
+  
