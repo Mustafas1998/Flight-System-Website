@@ -9,7 +9,9 @@ button{
   border-radius: 10px;
   font-size: 20px;
   font-weight: bolder;
-  color: #353535;
+  color: #252525;
+  border: none;
+  outline: none;
 }
 
 .signup-button{
@@ -70,11 +72,16 @@ a:hover{
 }
 
 .flight-cards-section{
+  padding: 80px;
+}
+
+.flight-cards-section{
   background-color: #272727;
 }
 
 .flight-cards-container h1{
-  margin-bottom: 25px;
+  margin: 20px 0 40px 0 ;
+  font-size: 48px;
 }
 
 .fa-star{
@@ -136,6 +143,7 @@ a:hover{
 .price{
   font-size: 20px;
 }
+
 
 .footer-container{
   background-color: #343434;
