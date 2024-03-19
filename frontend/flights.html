@@ -22,8 +22,7 @@
           </nav>
     
           <div class="flex login-signup-wrapper">
-            <button class=" no_bor no-outln login-button bg-primary" >Login</button>
-            <button class="signup-button primary-color">Signup</button>
+            
           </div>
     
           <select class="select-header hidden">
@@ -37,7 +36,7 @@
         </div>
       </header>
     <main class="bg-secondary">
-    <section class="container-1 flex">
+    <section class="container-1 flex wrap">
         <h1 class="primary-color" >Choose your flight</h1>
         <div class="search-container flex column space-between gap-10">
             <div class="wrap">
@@ -49,24 +48,45 @@
              <input type="text" class="filter radius-10" placeholder="  Price">
         </div>
     </section>
-    <section class="container-2 flex">
-        <div class="flight-card flex column  card-color" >
-            <div class="destination">
-                <img src="/frontend/styles/assets/venice.jpg" alt="venice">
-                <i class="fa-solid fa-star"></i> 
+    <section class="container-2 flex space-between ">
+        <div class="flex column flight-card white">
+            <div class="flex rating-wrapper" >
+              <p class="flex avg-rating"> 4.5</p>
+              <i class="fa-solid fa-star"></i>
             </div>
-            <div class="info flex column space-between">
-                <div class="flight-info flex column space-around" >
-                    <h4>Destination</h4>
-                    <div class="location flex row gap-10 ">
-                    <i class="fa-solid fa-map-pin"></i>
-                    <p>location</p>
-                    </div>
+            <div class="card-img">
+              <img src="./styles/assets/venice.jpg" alt="tokyo">
+            </div>
+            <div class="flex space-between card-info-wrapper">
+              <div class=" flex column destination-info">
+                <div>
+                  <p class="destination" >Tokyo</p>
+                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
                 </div>
-                <div class="price flex space-between">
-                    <p>50c / Ticket</p>
-                    <button class="book bg-primary">BOOK</button>
+                <p class="price">50c</p>
+              </div>
+              <button class="book-btn bg-primary">Book</button>
+            </div>
+          </div>
+          <div class="flex column flight-card white">
+            <div class="flex rating-wrapper" >
+              <p class="flex avg-rating"> 4.5</p>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="card-img">
+              <img src="./styles/assets/venice.jpg" alt="tokyo">
+            </div>
+            <div class="flex space-between card-info-wrapper">
+              <div class=" flex column destination-info">
+                <div>
+                  <p class="destination" >Tokyo</p>
+                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
                 </div>
+                <p class="price">50c</p>
+              </div>
+              <button class="book-btn bg-primary">Book</button>
+            </div>
+          </div>
 
 
 
@@ -74,7 +94,39 @@
 
 
 
+</main>
 
+<footer>
+    <div class="flex space-between footer-container">
+
+      <div class="flex column space-between">
+        <h1 h1 class="white">Cloud<span class="primary-color">Cruise</span></h1>
+        <p class="copy-rights white">copyright &copy; 2024 </p>
+      </div>
+
+      <div class="flex footer-nav">
+        <div class="flex column gap-20">
+          <a href="#">Discover</a>
+          <a href="#">Tracker</a>
+        </div>
+        <div class="flex column gap-20">
+          <a href="#">Contact Us</a>
+          <a href="#">About</a>
+        </div>
+      </div>
+
+      <div class="flex center column follow-us">
+        <h2 class="white">Follow Us</h2>
+        <div class="flex fa-brands-container white">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
