@@ -1,0 +1,312 @@
+.header-container{
+  background-color: rgb(25, 25, 25);
+  padding: 20px 80px;
+}
+
+button{
+  padding: 10px;
+  width: 117px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #252525;
+  border: none;
+  outline: none;
+}
+
+.signup-button{
+ border: 2px solid #C1FF9C;
+ background-color: rgba(255, 255, 255, 0);
+}
+
+.nav-header{
+  gap: 25px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px ;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s ease;
+  width: fit-content;
+}
+
+a:hover{
+  border-bottom: 3px solid #C1FF9C;
+}
+
+.login-signup-wrapper{
+  gap: 20px;
+}
+
+.popup{
+  height: 100vh;
+  width: 100vw;
+  background-color: #212121b6;
+  position: fixed;
+  z-index: 999;
+}
+
+.popup-wrapper{
+  background-color: #212121;
+  padding: 50px;
+  width: 50%;
+  max-width: 420px;
+  gap: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.074)
+}
+.popup-wrapper h1{
+  font-weight: bold;
+}
+
+.user-input-box{
+  width: 100%;
+}
+
+.user-input-box p{
+  font-size: 18px;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.user-input-box input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  outline: #363636;
+  font-size: 16px;
+  background-color: #363636;
+}
+
+.login-button{
+  width: 100%;
+  margin-top: 25px;
+}
+
+.hero-section{
+  background-image: url(../../assets/world-bs-gery.jpg);
+  background-repeat: no repeat;
+  background-position: center;
+  background-size: cover;
+  height: 75vh;
+}
+
+.hero-section h1{
+  font-size: 48px;
+}
+
+.hero-section img{
+  width: 100%;
+}
+
+.hero-image-wrapper{
+  width: 100%;
+
+}
+
+.hero-text{
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 2px;
+}
+
+.hero-btn{
+  width: 200px;
+}
+
+.flight-cards-section{
+  padding: 80px;
+}
+
+.flight-cards-section{
+  background-color: #272727;
+}
+
+.flight-cards-container h1{
+  margin: 20px 0 40px 0 ;
+  font-size: 48px;
+}
+
+.fa-star{
+  color: #caa500;
+}
+
+.cards-wrapper{
+  gap: 80px;
+}
+
+.flight-card{
+  background-color: #212121;
+  width: 350px;
+  position: relative;
+  border-radius: 10px;
+  
+}
+
+.card-info-wrapper{
+  padding: 5px 10px 10px 10px;
+}
+
+.rating-wrapper p{
+  color: #272727;
+  font-weight: bold;
+}
+
+.rating-wrapper{
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: 3px solid #343434;
+  padding: 3px 5px;
+  border-radius: 7px;
+  gap: 5px;
+}
+
+.card-img img{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.destination{
+  font-size: 24px;
+}
+
+.location{
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 20px;
+}
+
+.book-btn{
+  line-height: 1;
+  font-size: 20px;
+  align-self: flex-end;
+}
+
+.price{
+  font-size: 20px;
+}
+
+.guidline-container{
+  background-image: linear-gradient(rgba(173, 207, 153, 0.637),rgba(192, 255, 156, 0.5)), url(../../assets/green-bg.jpg);
+  background-repeat: no repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 50vh;
+  color: #252525;
+}
+
+.guidline-container h1{
+  font-size: 36px;
+  padding: 20px 0 40px;
+}
+
+.guidline-container ul{
+  line-height: 1.4;
+  padding: 0  0 20px 40px;
+  gap: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.guidline-container ul li{
+  font-size: 24px;
+}
+
+.reviews-container{
+  padding: 40px 80px;
+  background-color: #272727;
+}
+
+.reviews-container h1{
+  margin: 20px 0 40px 0;
+  font-size: 48px;
+}
+
+.review-card{
+  width: 300px;
+  background-color: #363636;
+  padding: 15px;
+  gap: 25px;
+  border-radius: 10px;
+  min-height: 230px;
+}
+
+.user-info{
+  gap: 5px;
+}
+
+.user-info p{
+  font-size:20px;
+}
+
+.user-info img{
+  width: 50px;
+  height: auto;
+  border-radius: 25px;
+}
+
+.user-info p{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rating-wrapper-reviews{
+  border: 3px solid white ;
+  padding: 3px 5px;
+  border-radius: 7px;
+  gap: 5px;
+  color: white;
+  max-width: fit-content;
+}
+
+.review-flight{
+  font-size: 14px;
+}
+
+.reviews-wrapper{
+  gap: 30px; 
+  overflow-x: auto;
+  width: calc(100% + 160px);
+}
+
+.review-card-holder{
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%);}
+}
+
+.footer-container{
+  background-color: #343434;
+  padding: 20px 80px;
+  height: 150px;
+}
+
+.copy-rights{
+  font-size: 12px;
+}
+
+.footer-nav{
+  gap: 25px;
+}
+
+.follow-us{
+  gap: 15px;
+}
+
+.follow-us h1{
+  font-size: 36px;
+}
+
+.fa-brands-container{
+  gap: 15px;
+  font-size: 32px;
+}
+
