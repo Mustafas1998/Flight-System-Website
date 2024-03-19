@@ -1,18 +1,18 @@
 .primary-color{
-  color: #C1FF9C;
+    color: #C1FF9C;
+  }
+  
+  .bg-primary{
+    background-color: #C1FF9C;
+  }
+  
+  .white{
+    color: white;
 }
 
-.bg-primary{
-  background-color: #C1FF9C;
+.bg-secondary{
+    background-color: #303030;
 }
-
-.white{
-  color: white;
-}
-.bg-red{
-  background-color: red;
-}
-
-.bg-blue{
-  background-color: blue;
+.card-color{
+    background-color:#212121 ;
 }
