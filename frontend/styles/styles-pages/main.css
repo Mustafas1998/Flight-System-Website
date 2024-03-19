@@ -69,7 +69,73 @@ a:hover{
   width: 200px;
 }
 
+.flight-cards-section{
+  background-color: #272727;
+}
 
+.flight-cards-container h1{
+  margin-bottom: 25px;
+}
+
+.fa-star{
+  color: #caa500;
+}
+
+.cards-wrapper{
+  gap: 80px;
+}
+
+.flight-card{
+  background-color: #212121;
+  width: 350px;
+  position: relative;
+  border-radius: 10px;
+  
+}
+
+.card-info-wrapper{
+  padding: 5px 10px 10px 10px;
+}
+
+.rating-wrapper p{
+  color: #272727;
+  font-weight: bold;
+}
+
+.rating-wrapper{
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: 3px solid #343434;
+  padding: 3px 5px;
+  border-radius: 7px;
+  gap: 5px;
+}
+
+.card-img img{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.destination{
+  font-size: 24px;
+}
+
+.location{
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 20px;
+}
+
+.book-btn{
+  line-height: 1;
+  font-size: 20px;
+  align-self: flex-end;
+}
+
+.price{
+  font-size: 20px;
+}
 
 .footer-container{
   background-color: #343434;
