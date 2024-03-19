@@ -1,0 +1,14 @@
+.side-bar{
+  width: 300px;
+  height: 100vh;
+}
+
+.dashboard{
+  background-color: aqua;
+  width: 100%;
+}
+
+.admin-container{
+  width: 100%;
+}
+
