@@ -40,6 +40,52 @@ a:hover{
   gap: 20px;
 }
 
+.popup{
+  height: 100vh;
+  width: 100vw;
+  background-color: #212121b6;
+  position: fixed;
+  z-index: 999;
+}
+
+.popup-wrapper{
+  background-color: #212121;
+  padding: 50px;
+  width: 50%;
+  max-width: 420px;
+  gap: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.074)
+}
+.popup-wrapper h1{
+  font-weight: bold;
+}
+
+.user-input-box{
+  width: 100%;
+}
+
+.user-input-box p{
+  font-size: 18px;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.user-input-box input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  outline: #363636;
+  font-size: 16px;
+  background-color: #363636;
+}
+
+.login-button{
+  width: 100%;
+  margin-top: 25px;
+}
+
 .hero-section{
   background-image: url(../../assets/world-bs-gery.jpg);
   background-repeat: no repeat;
@@ -224,6 +270,7 @@ a:hover{
 .reviews-wrapper{
   gap: 30px; 
   overflow-x: auto;
+  width: calc(100% + 160px);
 }
 
 .review-card-holder{
