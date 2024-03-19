@@ -1,14 +1,55 @@
 .side-bar{
   width: 300px;
   height: 100vh;
-}
-
-.dashboard{
-  background-color: aqua;
-  width: 100%;
+  padding-top: 40px;
+  background-color: #202020;
 }
 
 .admin-container{
   width: 100%;
+}
+
+.side-bar h1{
+  margin-bottom: 90px;
+  font-size: 32px;
+}
+
+.swich-btn{
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight:  bold;
+  cursor: pointer;
+}
+
+.btns-container{
+  width: 100%;
+  gap: 5px;
+
+}
+
+.swich-btn{
+  padding: 20px 0;
+}
+
+.dashboard{
+  background-color: #272727;
+  width: 100%;
+  padding: 0 80px;
+  min-height: 120px;
+  padding: 25px 100px;
+}
+
+
+.counter-wrapper{
+  background-color: #202020;
+  padding: 5px 55px;
+  border-radius: 10px;
+}
+
+.counter{
+  font-size: 32px;
+  font-weight: bold;
+  color: #C1FF9C;
 }
 

@@ -16,3 +16,11 @@
 .card-color{
     background-color:#212121 ;
 }
+
+.btn-text{
+  color: #353535;
+}
+
+.bg-invisible{
+  background-color: rgba(255, 255, 255, 0);
+}
