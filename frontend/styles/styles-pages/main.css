@@ -170,6 +170,72 @@ a:hover{
   font-size: 24px;
 }
 
+.reviews-container{
+  padding: 40px 80px;
+  background-color: #272727;
+}
+
+.reviews-container h1{
+  margin: 20px 0 40px 0;
+  font-size: 48px;
+}
+
+.review-card{
+  width: 300px;
+  background-color: #363636;
+  padding: 15px;
+  gap: 25px;
+  border-radius: 10px;
+  min-height: 230px;
+}
+
+.user-info{
+  gap: 5px;
+}
+
+.user-info p{
+  font-size:20px;
+}
+
+.user-info img{
+  width: 50px;
+  height: auto;
+  border-radius: 25px;
+}
+
+.user-info p{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rating-wrapper-reviews{
+  border: 3px solid white ;
+  padding: 3px 5px;
+  border-radius: 7px;
+  gap: 5px;
+  color: white;
+  max-width: fit-content;
+}
+
+.review-flight{
+  font-size: 14px;
+}
+
+.reviews-wrapper{
+  gap: 30px; 
+  overflow-x: auto;
+}
+
+.review-card-holder{
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%);}
+}
+
 .footer-container{
   background-color: #343434;
   padding: 20px 80px;

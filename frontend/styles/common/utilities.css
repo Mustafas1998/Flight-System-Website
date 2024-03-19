@@ -49,6 +49,10 @@
   align-items: start;
 }
 
+.align-end{
+  align-items: end;
+}
+
 .wrap{
   flex-wrap: wrap;
 }
