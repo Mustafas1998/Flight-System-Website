@@ -144,11 +144,19 @@ a:hover{
   }
   
   .book-btn{
-    line-height: 1;
+    line-height:1 ;
     font-size: 20px;
     align-self: flex-end;
+    width: 80px;
+    height: 40px;
   }
   
   .price{
     font-size: 20px;
+  }
+
+
+  .container-2{
+    gap: 20px;
+    padding: 20px;
   }
