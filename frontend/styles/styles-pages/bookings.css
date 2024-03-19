@@ -1,0 +1,95 @@
+.primary-color{
+    color: #C1FF9C;
+  }
+  
+  .bg-primary{
+    background-color: #C1FF9C;
+  }
+  
+  .white{
+    color: white;
+  }
+  .header-container{
+    background-color: rgb(25, 25, 25);
+    padding: 20px 80px;
+  }
+  
+  button{
+    padding: 10px;
+    width: 117px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #353535;
+  }
+  
+
+  
+  .nav-header{
+    gap: 25px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px ;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease;
+    width: fit-content;
+  }
+  
+  a:hover{
+    border-bottom: 3px solid #C1FF9C;
+  }
+  
+  .login-signup-wrapper{
+    gap: 20px;
+  }
+  .footer-container{
+    background-color: #343434;
+    padding: 20px 80px;
+    height: 150px;
+  }
+  
+  .copy-rights{
+    font-size: 12px;
+  }
+  
+  .footer-nav{
+    gap: 25px;
+  }
+  
+  .follow-us{
+    gap: 15px;
+  }
+  
+  .follow-us h1{
+    font-size: 36px;
+  }
+  
+  .fa-brands-container{
+    gap: 15px;
+    font-size: 32px;
+  }
+
+
+  h2{
+    padding: 20px 80px;
+    text-align: center;
+    color: #ffff;
+  }
+  body{
+    background-color:#212121;
+  }
+
+  button{
+    background-color: #C1FF9C;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0;
+
+  }
+
+  
