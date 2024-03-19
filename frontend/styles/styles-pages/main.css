@@ -40,6 +40,8 @@ a:hover{
   gap: 20px;
 }
 
+
+
 .hero-section{
   background-image: url(../../assets/world-bs-gery.jpg);
   background-repeat: no repeat;
@@ -224,6 +226,7 @@ a:hover{
 .reviews-wrapper{
   gap: 30px; 
   overflow-x: auto;
+  width: calc(100% + 160px);
 }
 
 .review-card-holder{
