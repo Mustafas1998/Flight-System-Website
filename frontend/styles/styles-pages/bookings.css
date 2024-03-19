@@ -92,4 +92,39 @@
 
   }
 
+.seat-number{
+    background-color: #343434;
+}
+.seat{
+    border: #212121;
+    width: 30px;
+    height: 30px;
+
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #343434;
+    width: 500px;
+    height: 220px;
+    padding: 10px;
+    
+}
+
+.seat{
+    width: 30px;
+    height: 30px; 
+    background-color: transparent; 
+    border: 1px solid black;
+}
+.booking-info{
+    padding-bottom: 20px;
+
+}
+
+
   
