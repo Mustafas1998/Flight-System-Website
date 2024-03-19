@@ -49,6 +49,10 @@
   align-items: start;
 }
 
+.align-end{
+  align-items: end;
+}
+
 .wrap{
   flex-wrap: wrap;
 }
@@ -83,4 +87,8 @@
 
 .hidden{
   display: none;
+}
+
+.padding-20-80{
+  padding: 20px 80px;
 }
