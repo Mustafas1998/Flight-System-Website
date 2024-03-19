@@ -35,7 +35,76 @@
           <p class="counter">1245312</p>
         </div>
       </div>
-      <div class="operation-div"></div>
+      <div class="flex column operation-div">
+        <h1 class="white">Current Flights</h1>
+        <div class="flex add-flight-inputs">
+          <select class="fligh-input" name="Airline" id="Airline">
+            <option value="airline">Airline</option>
+            <option value="1234">1234</option>
+            <option value="1234">1234</option>
+          </select>
+          <select class="fligh-input" name="Airplane" id="Airplane">
+            <option value="airplane">Airplane</option>
+            <option value="1234">1234</option>
+            <option value="1234">1234</option>
+          </select>
+          <select class="fligh-input" name="dep-Airport" id="Dep-Airport">
+            <option value="Dep-Airport">Dep-Airport</option>
+            <option value="1234">1234</option>
+            <option value="1234">1234</option>
+          </select>
+          <div class="flex date-time-input" >
+            <input class="fligh-input" type="date">
+            <input class="fligh-input" type="time">
+          </div>
+          <select class="fligh-input" name="Arr-Airport" id="Arr-Airport">
+            <option value="arr-Airport">Arr-Airport</option>
+            <option value="1234">1234</option>
+            <option value="1234">1234</option>
+          </select>
+          <div class="flex date-time-input" >
+            <input class="fligh-input" type="date">
+            <input class="fligh-input" type="time">
+          </div>
+          <select class="fligh-input" name="Status" id="flight-status">
+            <option value="flight-status">Status</option>
+            <option value="1234">1234</option>
+            <option value="1234">1234</option>
+          </select>
+          <button class="add-btn">ADD</button>
+        </div>
+        <table class="flights-table white">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+              <th>Column 4</th>
+              <th>Column 5</th>
+              <th>Column 6</th>
+              <th>Column 7</th>
+              <th>Column 8</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data 1</td>
+              <td>Data 2</td>
+              <td>Data 3</td>
+              <td>Data 4</td>
+              <td>Data 5</td>
+              <td>Data 6</td>
+              <td>Data 7</td>
+              <td>Data 8</td>
+              <td><button>Edit</button></td>
+              <td><button>Cancel</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </body>
