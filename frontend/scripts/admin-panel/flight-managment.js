@@ -59,6 +59,47 @@ const loadFlightInputs = async () => {
 loadFlightInputs()
 loadDashboard()
 
+const validateAddInputs = () => {
+  if (
+    destination_input.value === "" ||
+    country_input.value === "" ||
+    price_input.value === "" ||
+    airline_input.value === "" ||
+    airplane_input.value === "" ||
+    dep_airport_input.value === "" ||
+    arr_airport_input.value === "" ||
+    dep_date_input.value === "" ||
+    dep_time_input.value === "" ||
+    arr_date_input.value === "" ||
+    arr_time_input.value === ""
+  ) {
+    empty_field.classList.remove("invisible")
+  } else {
+    let flight
+    loadFlightInputs({
+      destination: destination_input.value,
+      country: country_input.value,
+      price: price_input.value,
+      departure_airport_id: dep_airport_input.value,
+      departure_date_id: dep_date_input.value + dep_time_input.value,
+      arrival_airport: arr_airport_input.value,
+      arrival_date: arr_time_input.value + arr_date_input.value,
+      airline_id: airline_input.value,
+      airplane_id: airplane_input.value
+    })
+    destination_input.value = ""
+    country_input.value = ""
+    price_input.value = ""
+    airline_input.value = ""
+    airplane_input.value = ""
+    dep_airport_input.value = ""
+    arr_airport_input.value = ""
+    dep_date_input.value = ""
+    dep_time_input.value = ""
+    arr_date_input.value = ""
+    arr_time_input.value = ""
+  }
+}
 
 add_flight.addEventListener("click", () => {
   validateAddInputs()
