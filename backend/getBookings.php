@@ -16,7 +16,9 @@ if ($num_rows==0){
         $booking=[
             'booking_id'=> $booking_id,
             'seat_number'=> $seat_number,
-            'valid'=> $valid
+            'valid'=> $valid,
+            'flight_id'=> $flight_id,
+            'user_id'=> $user_id
             
         ];
         $bookings[]=$booking;
