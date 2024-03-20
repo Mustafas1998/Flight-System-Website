@@ -1,27 +1,29 @@
 <?php
 include("connection.php");
 
-$flight_id =isset($_POST['flight_id']) ? $_POST['flight_id'] : false;
+$flight_id = isset($_GET['flight_id']) ? $_GET['flight_id'] : false;
+$found = false;
 
 if($flight_id){
-	$query = $mysqli->prepare("SELECT * FROM flights");
-
-}else{
 	$query = $mysqli->prepare("SELECT * FROM flights WHERE flight_id = ?");
 	$query -> bind_param("i", $flight_id);
+	$found = true;
+
+}else{
+	$query = $mysqli->prepare("SELECT * FROM flights");
 }
 $query->execute();
 $query->store_result();
 $num_rows = $query->num_rows();
 
 if ($num_rows === 0) {
-    $response["status"] = "empty";
-  
+  $response["status"] = "empty";
+	$response['messgae'] = "no flights found";
 }else{
-	$array_list = [];
+	$flights_list = [];
 	$query->bind_result($flight_id,$destintion,$country,$price,$departure_date,$arrival_date,$flight_status,$airline_id,$departure_airport_id,$arrival_airport_id,$airplane_id);
 	while ($query->fetch()){
-			$array = [
+			$flight = [
 					"flight_id"=> $flight_id,
 					"destination"=> $destintion,
 					"country"=> $country,
@@ -34,9 +36,16 @@ if ($num_rows === 0) {
 					"arrival_airport_id"=> $arrival_airport_id,
 					"airplane_id"=> $airplane_id,  
 			];
-			$array_list[] = $array;	
+			$flight_list[] = $flight;	
 	}
 	$response["status"] = "success";
-	$response["flights"] = $array_list;
+
+	if ($found){
+		$response["flight"] = $flight;
+	}else{
+		$response["flights"] = $flight_list;
+
+	}
 }
+
 echo json_encode($response);

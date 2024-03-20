@@ -101,6 +101,16 @@ const validateAddInputs = () => {
   }
 }
 
+const displayEmptyFieldError = () => {
+  empty_field.classList.remove("invisible");
+};
+
+const clearInputFields = inputs => {
+  inputs.forEach(input => {
+    input.value = "";
+  });
+};
+
 add_flight.addEventListener("click", () => {
   validateAddInputs()
 })
