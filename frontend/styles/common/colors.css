@@ -1,13 +1,13 @@
 .primary-color{
-    color: #C1FF9C;
-  }
+  color: #C1FF9C;
+}
   
-  .bg-primary{
-    background-color: #C1FF9C;
-  }
+.bg-primary{
+  background-color: #C1FF9C;
+}
   
-  .white{
-    color: white;
+.white{
+  color: white;
 }
 
 .bg-secondary{
@@ -15,4 +15,12 @@
 }
 .card-color{
     background-color:#212121 ;
+}
+
+.btn-text{
+  color: #353535;
+}
+
+.bg-invisible{
+  background-color: rgba(255, 255, 255, 0);
 }
