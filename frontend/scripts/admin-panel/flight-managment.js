@@ -56,27 +56,27 @@ const loadFlightInputs = async () => {
   console.log(typeof (dep_date_input.value), dep_time_input.value, typeof (price_input.value))
 }
 
-loadFlightInputs()
-loadDashboard()
-
 const validateAddInputs = () => {
-  if (
-    destination_input.value === "" ||
-    country_input.value === "" ||
-    price_input.value === "" ||
-    airline_input.value === "" ||
-    airplane_input.value === "" ||
-    dep_airport_input.value === "" ||
-    arr_airport_input.value === "" ||
-    dep_date_input.value === "" ||
-    dep_time_input.value === "" ||
-    arr_date_input.value === "" ||
-    arr_time_input.value === ""
-  ) {
-    empty_field.classList.remove("invisible")
+  const inputs = [
+    destination_input,
+    country_input,
+    price_input,
+    airline_input,
+    airplane_input,
+    dep_airport_input,
+    arr_airport_input,
+    dep_date_input,
+    dep_time_input,
+    arr_date_input,
+    arr_time_input
+  ];
+
+  const empty_inputs = inputs.filter(input => input.value === "");
+
+  if (empty_inputs.length > 0) {
+    empty_field.classList.remove("invisible");
   } else {
-    let flight
-    loadFlightInputs({
+    const flight_data = {
       destination: destination_input.value,
       country: country_input.value,
       price: price_input.value,
@@ -86,26 +86,14 @@ const validateAddInputs = () => {
       arrival_date: arr_time_input.value + arr_date_input.value,
       airline_id: airline_input.value,
       airplane_id: airplane_input.value
-    })
-    destination_input.value = ""
-    country_input.value = ""
-    price_input.value = ""
-    airline_input.value = ""
-    airplane_input.value = ""
-    dep_airport_input.value = ""
-    arr_airport_input.value = ""
-    dep_date_input.value = ""
-    dep_time_input.value = ""
-    arr_date_input.value = ""
-    arr_time_input.value = ""
-  }
-}
+    };
 
-const displayEmptyFieldError = () => {
-  empty_field.classList.remove("invisible");
+    saveFlight(flight_data);
+    clearInputFields(inputs);
+  }
 };
 
-const clearInputFields = inputs => {
+const clearInputFields = (inputs) => {
   inputs.forEach(input => {
     input.value = "";
   });
@@ -114,3 +102,6 @@ const clearInputFields = inputs => {
 add_flight.addEventListener("click", () => {
   validateAddInputs()
 })
+
+loadFlightInputs()
+loadDashboard()

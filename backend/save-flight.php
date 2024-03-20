@@ -24,7 +24,7 @@ if ($results->execute()) {
 
 } else {
 	$response['status']='failed';
-    $response['message']='failed to create flight';
+  $response['message']='failed to create flight';
 }
 
 echo json_encode($response);
