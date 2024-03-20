@@ -16,10 +16,7 @@ $sql = "INSERT INTO flights (destination, country, price, departure_date, arriva
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $results = $mysqli->prepare($sql);
 
-
-
 $results->bind_param("ssisssiiii",$destination, $country, $price, $departure_date, $arrival_date, $flight_status, $airline_id, $departure_airport_id, $arrival_airport_id, $airplane_id);
-$results->execute();
 
 if ($results->execute()) {
 	$response['status']='success';
