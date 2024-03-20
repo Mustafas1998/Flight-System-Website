@@ -1,48 +1,64 @@
-const allSeats=document.querySelectorAll(".seat");
+const seats=document.querySelectorAll(".seat");
 const bookButton= document.getElementById("bookBtn");
 
+//i should get flights and destructure to get flight-id
 
 
-
-
-
-const getAvailableSeats = (flight_id) => {
-     fetch("http://localhost/Flight-System-Website/backend/getBookings.php")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-         displaySeats(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+//get and display bookings according to each flight
+const fetchData =async ()=> {
+    try {
+        const response = await axios.get("http://localhost/Flight-System-Website/backend/getBookings.php");
+        const data = response.data;
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
     }
-
-    const displaySeats = (data) => {
-        allSeats.forEach(seat => {
-            if (data.seat_number === seat.value) {
-                seat.removeEventListener("click",()=>{
-                    seat.classList.remove("bg-primary")
-                }
-                )
-            } else {
-               bookSeat(); 
-                
-            }
-        });
-    }
-
-const bookSeat=(allSeats)=>{
-    allSeats.forEach(seat=>{
-        seat.addEventListener("click",()=>{
-            seat.classList.add("bg-primary")
-        }
-        )
-    })
 }
 
+const displaySeats = (data) => {
+    const seatNumbers = [];
+    data.forEach(booking=> {
+    seatNumbers.push(booking.seat_number);
+    console.log(seatNumbers)
+});}
 
+
+
+
+seats.forEach(seat => {
+    seat.addEventListener('click', (event) => {
+        event.target.classList.add('bg-primary');
+        console.log("clicked")
+    });
+});
+
+
+
+
+
+// const displaySeats = (data) => {
+//     allSeats.forEach(seat => {
+//         if (data.seat_number === seat.value) {
+//             seat.removeEventListener("click",()=>{
+//                 seat.classList.remove("bg-primary")
+//             }
+//                 )
+//         } else {
+//             bookSeat(); 
+//             }
+//         });
+//     }
+
+// const bookSeat = (allSeats) => {
+//         allSeats.forEach(seat => {
+//             const addBgColor = () => {
+//                 seat.classList.add("bg-primary");
+//             };
+//             seat.addEventListener("click", addBgColor);
+//         });
+//     }
+
+//save booking
 bookButton.addEventListener("click",()=>{
     try{
         const data = new FormData();
