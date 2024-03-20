@@ -22,6 +22,15 @@
         <input class="fligh-input" type="date" id="edit-arr-date-input">
         <input class="fligh-input" type="time" id="edit-arr-time-input">
       </div>
+      <select class="fligh-input" name="Status" id="flight-status">
+        <option value="">Status</option>
+        <option value="Ready">Ready</option>
+        <option value="Delayed">Delayed</option>
+        <option value="Departed">Departed</option>
+        <option value="Arrived">Arrived</option>
+        <option value="Canceled">Canceled</option>
+
+      </select>
       <div class="flex space-between ">
         <button class="edit-btn" id="confirm-edit">Confirm</button>
         <button class="edit-btn" id="cancel-edit">Cancel</button>
@@ -55,10 +64,11 @@
       </div>
       <div class="flex column operation-div" id="flight-managment">
         <h1 class="white">Current Flights</h1>
-        <div class="add-flight-inputs">
+        <div class="flex add-flight-inputs">
           <input type="text" placeholder="Destination" id="destination-input">
           <input type="text" placeholder="Country" id="country-input">
           <input type="number" placeholder="Price" id="price-input">
+          <p class="empty-field" id="empty-field">Please fill all fields</p>
         </div>
         <div class="flex add-flight-inputs">
           <select class="fligh-input" name="Airline" id="airline-input">
@@ -86,12 +96,9 @@
             <input class="fligh-input" type="date" id="arr-date-input">
             <input class="fligh-input" type="time" id="arr-time-input">
           </div>
-          <select class="fligh-input" name="Status" id="flight-status">
-            <option value="flight-status">Status</option>
-
-          </select>
           <button class="add-btn" id="add-flight">ADD</button>
         </div>
+        
         <table class="flights-table white">
           <thead>
             <tr>

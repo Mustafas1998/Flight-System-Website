@@ -29,6 +29,8 @@ const arr_time_input = document.getElementById('arr-time-input')
 const flight_status = document.getElementById('flight-status')
 const add_flight = document.getElementById('add-flight')
 
+const empty_field = document.getElementById('empty-field')
+
 const loadDashboard = async () => {
   const dashboard = await getDashboardNumbers()
   console.log(dashboard)
@@ -44,6 +46,20 @@ const generateOptions = (container, options) => {
   });
 }
 
+const loadFlightInputs = async () => {
+  const flight_inputs = await getFlightInputs()
+  console.log(flight_inputs)
+  generateOptions(airline_input, flight_inputs.airlines)
+  generateOptions(airplane_input, flight_inputs.airplanes)
+  generateOptions(dep_airport_input, flight_inputs.airports)
+  generateOptions(arr_airport_input, flight_inputs.airports)
+  console.log(typeof (dep_date_input.value), dep_time_input.value)
+}
 
+loadFlightInputs()
 loadDashboard()
 
+
+add_flight.addEventListener("click", () => {
+
+})

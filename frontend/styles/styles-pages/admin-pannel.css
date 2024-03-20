@@ -133,4 +133,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.empty-field{
+  color: red;
+}
 
