@@ -74,6 +74,18 @@ const getFlights = async (flight_id) => {
   }
 }
 
+const getFlightsAdmin = async (flight_id) => {
+  try {
+    const result = await fetch(`http://127.0.0.1/Flight-System-Website/backend/get-flights_admin.php`, {
+      method: 'GET',
+    });
+    const response = await result.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 const validateLogin = async (identefier, password) => {
   try {
     const form_data = new FormData()

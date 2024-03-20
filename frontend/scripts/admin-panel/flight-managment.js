@@ -91,10 +91,33 @@ const validateAddInputs = () => {
     console.log(flight_data)
     saveFlight(flight_data)
   }
-};
+}
 
-// const loadFlights = () => {
-//   flights_table.innerHTML = 
+const generateFlightRow = (table, flight) => {
+  table.innerHTML +=
+    `<tr>
+      <td>${flight.destination}</td>
+      <td>${flight.country}</td>
+      <td>${flight.price}</td>
+      <td>${flight.airline_name}</td>
+      <td>${flight.airplane_model}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.destination}</td>
+      <td><button class="flight-edit">Edit</button></td>
+      <td><button class="flight-cancel">Cancel</button></td>
+    </tr >`
+}
+
+// const loadFlights = async () => {
+//   flights_table.innerHTML = ""
+//   const flights = await getFlights("")
+//   flights.forEach((flight) => {
+
+//   })
 // }
 
 
@@ -110,3 +133,4 @@ add_flight.addEventListener("click", () => {
 
 loadFlightInputs()
 loadDashboard()
+loadFlights()
