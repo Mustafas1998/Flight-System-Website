@@ -38,6 +38,8 @@ const saveFlight = async (flight) => {
       airplane_id
     } = flight
 
+    console.log()
+
     const form_data = new URLSearchParams()
     form_data.append("destination", destination)
     form_data.append("country", country)

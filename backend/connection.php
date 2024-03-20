@@ -1,8 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: *");
-header("Access-Control-Allow-Headers: *");
-header('Content-Type: application/json');
+header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, X-Request-Width, Authorization");
 
 $host = "localhost";
 $db_user = "root";
