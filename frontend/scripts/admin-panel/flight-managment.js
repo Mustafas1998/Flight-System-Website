@@ -37,5 +37,13 @@ const loadDashboard = async () => {
   total_users.innerText = dashboard.total_users
 }
 
+const generateOptions = (container, options) => {
+  options.forEach(option => {
+    const element = `<option value=${option.id}>${option.name ? option.name : option.model}</option>`
+    container.innerHTML += element
+  });
+}
+
+
 loadDashboard()
 
