@@ -62,10 +62,26 @@ const saveFlight = async (flight) => {
   }
 }
 
+const getFlights = async (flight_id) => {
+  try {
+    const result = await fetch(`http://127.0.0.1/Flight-System-Website/backend/get-flights.php?flight_id=${flight_id}`, {
+      method: 'GET',
+    });
+    const response = await result.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 const validateLogin = async (identefier, password) => {
   try {
+    const form_data = new FormData()
+    form_data.append("identifier", identefier)
+    form_data.append("password", password)
     const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/login.php", {
-      method: 'POST'
+      method: 'POST',
+      body: form_data
     });
     const response = await result.json()
     return response

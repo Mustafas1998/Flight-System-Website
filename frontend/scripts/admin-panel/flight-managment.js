@@ -29,6 +29,7 @@ const arr_time_input = document.getElementById('arr-time-input')
 const flight_status = document.getElementById('flight-status')
 const add_flight = document.getElementById('add-flight')
 
+const flights_table = document.getElementById('flights-table')
 const empty_field = document.getElementById('empty-field')
 
 const loadDashboard = async () => {
@@ -91,6 +92,11 @@ const validateAddInputs = () => {
     saveFlight(flight_data)
   }
 };
+
+// const loadFlights = () => {
+//   flights_table.innerHTML = 
+// }
+
 
 const clearInputFields = (inputs) => {
   inputs.forEach(input => {
