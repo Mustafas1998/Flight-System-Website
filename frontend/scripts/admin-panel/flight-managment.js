@@ -29,5 +29,13 @@ const arr_time_input = document.getElementById('arr-time-input')
 const flight_status = document.getElementById('flight-status')
 const add_flight = document.getElementById('add-flight')
 
+const loadDashboard = async () => {
+  const dashboard = await getDashboardNumbers()
+  console.log(dashboard)
+  total_bookings.innerText = dashboard.total_bookings
+  total_flights.innerText = dashboard.total_flights
+  total_users.innerText = dashboard.total_users
+}
 
+loadDashboard()
 
