@@ -1,4 +1,4 @@
-const getFlightsInputs = async () => {
+const getFlightInputs = async () => {
   try {
     const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/get-flight-inputs.php", {
       method: 'GET'
@@ -10,5 +10,15 @@ const getFlightsInputs = async () => {
   }
 }
 
-
+const getDashboardNumbers = async () => {
+  try {
+    const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/get-dashboard-numbers.php", {
+      method: 'GET'
+    });
+    const response = await result.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
 
