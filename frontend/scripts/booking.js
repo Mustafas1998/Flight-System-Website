@@ -18,7 +18,7 @@ const getAvailableSeats = (flight_id) => {
         console.error(error);
       });
     }
-getAvailableSeats()
+
     const displaySeats = (data) => {
         allSeats.forEach(seat => {
             if (data.seat_number === seat.value) {
@@ -33,7 +33,7 @@ getAvailableSeats()
         });
     }
 
-const bookSeat=()=>{
+const bookSeat=(allSeats)=>{
     allSeats.forEach(seat=>{
         seat.addEventListener("click",()=>{
             seat.classList.add("bg-primary")
@@ -62,4 +62,3 @@ bookButton.addEventListener("click",()=>{
 
     }
 })
-
