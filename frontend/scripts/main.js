@@ -15,7 +15,9 @@ const signup_pass_input = document.getElementById("signup-pass-input")
 const signup_conf_pass_input = document.getElementById("signup-conf-pass-input")
 const popup_signup_button = document.getElementById("popup-signup-button")
 
-
+// const validateLogin = () => {
+//   if
+// }
 
 
 login_button.addEventListener("click", () => {

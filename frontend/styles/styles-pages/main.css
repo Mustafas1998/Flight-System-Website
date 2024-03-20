@@ -40,6 +40,11 @@ a:hover{
   gap: 20px;
 }
 
+.login-signup-wrapper img{
+  height: 47px;
+  border-radius: 24px;
+}
+
 .popup{
   height: 100vh;
   width: 100vw;
@@ -48,8 +53,6 @@ a:hover{
   z-index: 999;
 
 }
-
-
 
 .popup-wrapper{
   background-color: #212121;

@@ -71,31 +71,30 @@ const validateAddInputs = () => {
     arr_time_input
   ];
 
-  const empty_inputs = inputs.filter(input => input.value === "");
+  const empty_inputs = inputs.filter(input => input.value === "")
 
   if (empty_inputs.length > 0) {
-    empty_field.classList.remove("invisible");
+    empty_field.classList.remove("invisible")
   } else {
     const flight_data = {
       destination: destination_input.value,
       country: country_input.value,
       price: price_input.value,
       departure_airport_id: dep_airport_input.value,
-      departure_date_id: dep_date_input.value + dep_time_input.value,
-      arrival_airport: arr_airport_input.value,
-      arrival_date: arr_time_input.value + arr_date_input.value,
+      departure_date: dep_date_input.value + " " + dep_time_input.value,
+      arrival_airport_id: arr_airport_input.value,
+      arrival_date: arr_date_input.value + " " + arr_time_input.value,
       airline_id: airline_input.value,
       airplane_id: airplane_input.value
     };
-
-    saveFlight(flight_data);
-    clearInputFields(inputs);
+    console.log(flight_data)
+    saveFlight(flight_data)
   }
 };
 
 const clearInputFields = (inputs) => {
   inputs.forEach(input => {
-    input.value = "";
+    input.value = ""
   });
 };
 

@@ -10,7 +10,7 @@ $query -> store_result();
 $num_rows = $query -> num_rows();
 
 if($num_rows !== 0){
-  $query -> bind_result($user_id, $username,	$email, $user_password, $f_name, $l_name, $phone, $bank, $valid_booking);
+  $query -> bind_result($user_id, $username,	$email, $user_password, $f_name, $l_name, $phone, $bank, $valid_booking, $is_admin);
   $query -> fetch();
   $user_info = [ 
     "id" => $user_id,
@@ -20,7 +20,8 @@ if($num_rows !== 0){
     "l_name" =>$l_name,
     "phone" => $phone,
     "bank" => $bank,
-    "valid_booking" => $valid_booking
+    "valid_booking" => $valid_booking,
+    "is_admin" => $is_admin
   ];
 
   $response['status'] = "success";
