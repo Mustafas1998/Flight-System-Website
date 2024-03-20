@@ -53,7 +53,7 @@ const loadFlightInputs = async () => {
   generateOptions(airplane_input, flight_inputs.airplanes)
   generateOptions(dep_airport_input, flight_inputs.airports)
   generateOptions(arr_airport_input, flight_inputs.airports)
-  console.log(typeof (dep_date_input.value), dep_time_input.value)
+  console.log(typeof (dep_date_input.value), dep_time_input.value, typeof (price_input.value))
 }
 
 loadFlightInputs()
@@ -61,5 +61,5 @@ loadDashboard()
 
 
 add_flight.addEventListener("click", () => {
-
+  validateAddInputs()
 })
