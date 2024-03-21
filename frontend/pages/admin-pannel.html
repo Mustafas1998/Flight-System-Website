@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/common/utilities.css">
+  <link rel="stylesheet" href="../styles/common/colors.css">
+  <link rel="stylesheet" href="../styles/styles-pages/admin-pannel.css">
+  <title>CloudCruise</title>
+  <title>Document</title>
+</head>
+<body>
+  <div class="flex center edit-flight-popup hidden">
+    <div class="flex column edit-flight-popup-wrapper white">
+      <div class="flex column gap-10">
+        <p>Depature</p>
+        <input class="fligh-input" type="date" id="edit-dep-date-input">
+        <input class="fligh-input" type="time" id="edit-dep-time-input">
+      </div>
+      <div class="flex column gap-10">
+        <p>Arrival</p>
+        <input class="fligh-input" type="date" id="edit-arr-date-input">
+        <input class="fligh-input" type="time" id="edit-arr-time-input">
+      </div>
+      <select class="fligh-input" name="Status" id="flight-status">
+        <option value="">Status</option>
+        <option value="Ready">Ready</option>
+        <option value="Delayed">Delayed</option>
+        <option value="Departed">Departed</option>
+        <option value="Arrived">Arrived</option>
+        <option value="Canceled">Canceled</option>
+
+      </select>
+      <div class="flex space-between ">
+        <button class="edit-btn" id="confirm-edit">Confirm</button>
+        <button class="edit-btn" id="cancel-edit">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex column align-center side-bar">
+      <h1 class=" white">Cloud<span class="primary-color">Criuse</span></h1>
+      <div class="flex column btns-container">
+        <button class="swich-btn white bg-invisible " id="booking-financial-switch">Booking and financial</button>
+        <button class="swich-btn btn-text bg-primary" id="flight-managment-switch">Flight management</button>
+        <button class="swich-btn white bg-invisible" id="coins-requests-switch">Coins request forms</button>
+        <button class="swich-btn white bg-invisible" id="customer-support-switch">customer support</button>
+      </div>
+    </div>
+    <div class="flex column admin-container">
+      <div class="flex space-between dashboard white">
+        <div class="counter-wrapper">
+          <p>Total Booking</p>
+          <p class="counter" id="total-bookings">0</p>
+        </div>
+        <div class="counter-wrapper">
+          <p>Total Flights</p>
+          <p class="counter" id="total-flights">0</p>
+        </div>
+        <div class="counter-wrapper">
+          <p>Total Users</p>
+          <p class="counter" id="total-users">0</p>
+        </div>
+      </div>
+      <div class="flex column operation-div" id="flight-managment">
+        <h1 class="white">Current Flights</h1>
+        <div class="flex add-flight-inputs">
+          <input type="text" placeholder="Destination" id="destination-input">
+          <input type="text" placeholder="Country" id="country-input">
+          <input type="number" placeholder="Price" id="price-input">
+          <p class="empty-field invisible" id="empty-field">Please fill all fields</p>
+        </div>
+        <div class="flex add-flight-inputs">
+          <select class="fligh-input" name="Airline" id="airline-input">
+            <option value="">Airline</option>
+
+          </select>
+          <select class="fligh-input" name="Airplane" id="airplane-input">
+            <option value="">Airplane</option>
+
+          </select>
+          <select class="fligh-input" name="dep-Airport" id="dep-airport-input">
+            <option value="">Dep-Airport</option>
+
+          </select>
+          <div class="flex date-time-input" >
+            <input class="fligh-input" type="date" id="dep-date-input">
+            <input class="fligh-input" type="time" id="dep-time-input">
+          </div>
+          <select class="fligh-input" name="Arr-Airport" id="arr-airport-input">
+            <option value="">Arr-Airport</option>
+            
+          </select>
+          <div class="flex date-time-input" >
+            <input class="fligh-input" type="date" id="arr-date-input">
+            <input class="fligh-input" type="time" id="arr-time-input">
+          </div>
+          <button class="add-btn" id="add-flight">ADD</button>
+        </div>
+        
+        <table class="flights-table white">
+          <thead>
+            <tr>
+              <th>Flight</th>
+              <th>Destination</th>
+              <th>Country</th>
+              <th>Airline</th>
+              <th>Airplane</th>
+              <th>Dep-Airport</th>
+              <th>Dep-Date</th>
+              <th>Arr-Airport</th>
+              <th>Arr-Date</th>
+              <th>Status</th>
+              <th>Price</th>
+              <th>Edit</th>
+              <th>Cancel</th>
+            </tr>
+          </thead>
+          <tbody id="flights-table">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  scs
+  <script src="../scripts/APIs.js"></script>
+  <script src="../scripts/admin-panel/flight-managment.js"></script>
+</body>
+</html>

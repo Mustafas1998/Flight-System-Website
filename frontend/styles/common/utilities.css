@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.bold{
+  font-weight: bold;
+}
+
 .row{
   flex-direction: row;
 }
@@ -87,6 +91,10 @@
 
 .hidden{
   display: none;
+}
+
+.invisible{
+  visibility: hidden;
 }
 
 .padding-20-80{
