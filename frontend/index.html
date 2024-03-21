@@ -15,43 +15,48 @@
 <body>
 
   <header>
-    <div class="flex center popup hidden">
+    <div class="flex center popup hidden" id="login-popup">
+      
       <div class="flex column align-center popup-wrapper">
         <h1 class="white">Login</h1>
         <div class="user-input-box">
+         
           <p>Username/Email</p>
-          <input type="text" placeholder="Example@gmail.com">
+          <input type="text" placeholder="Example@gmail.com" id="login-identifier-input">
         </div>
         <div class="user-input-box">
           <p>Password</p>
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" id="login-pass-input">
+          <p class="red invisible" id="signup-error">Incorrect Username/Password</p>
         </div>
-        <button class="login-button bg-primary">Login</button>
-        <p class="white ">Don’t Have An Account?<a class="primary-color" href="#">Signup</a></p>
+        <button class="popup-button bg-primary" id="popup-login-button">Login</button>
+        <p class="white ">Don’t Have An Account? <span class="popup-switch primary-color" id="login-switch">Signup</span></p>
       </div>
     </div>
-
-    <div class="flex center popup hidden">
+    
+    <div class="flex center popup hidden" id="signup-popup">
+      
       <div class="flex column align-center popup-wrapper">
-        <h1>Signup</h1>
+        <h1 class="white">Signup</h1>
         <div class="user-input-box">
+          <p class="red invisible" id="signup-error"></p>
           <p>Username</p>
-          <input type="text" placeholder="Username">
+          <input type="text" placeholder="Username" id="signup-username-input">
         </div>
         <div class="user-input-box">
           <p>Email</p>
-          <input type="text" placeholder="Example@gmail.com">
+          <input type="text" placeholder="Example@gmail.com" id="signup-email-input">
         </div>
         <div class="user-input-box">
           <p>Password</p>
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" id="signup-pass-input">
         </div>
         <div class="user-input-box">
           <p>Confirm Password</p>
-          <input type="password" placeholder="Confirm Password">
+          <input type="password" placeholder="Confirm Password" id="signup-conf-pass-input">
         </div>
-        <button class="login-button bg-primary">Signup</button>
-        <p>Already Have An Account?<a class="primary-color" href="#">Signup</a></p>
+        <button class="popup-button bg-primary" id="popup-signup-button">Signup</button>
+        <p class="white">Already Have An Account? <span class="popup-switch primary-color" id="signup-switch">Signup</span></p>
       </div>
     </div>
     
@@ -64,10 +69,12 @@
         <a href="#">Tracker</a>
         <a href="#">FQA</a>
       </nav>
-
-      <div class="flex login-signup-wrapper">
-        <button class="login-button bg-primary" >Login</button>
-        <button class="signup-button primary-color">Signup</button>
+      <div class="flex login-signup-wrapper hidden" id="profile-img">
+        <img src="./assets/profile.jpg" alt="">
+      </div>
+      <div class="flex login-signup-wrapper" id="login-signup-wrapper">
+        <button class="login-button bg-primary" id="login-button">Login</button>
+        <button class="signup-button primary-color" id="signup-button">Signup</button>
       </div>
 
       <select class="select-header hidden">

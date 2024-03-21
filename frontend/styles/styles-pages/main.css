@@ -17,7 +17,6 @@ button{
 .signup-button{
  border: 2px solid #C1FF9C;
  background-color: rgba(255, 255, 255, 0);
- line-height: 1;
 }
 
 .nav-header{
@@ -41,12 +40,18 @@ a:hover{
   gap: 20px;
 }
 
+.login-signup-wrapper img{
+  height: 47px;
+  border-radius: 24px;
+}
+
 .popup{
   height: 100vh;
   width: 100vw;
   background-color: #212121b6;
   position: fixed;
   z-index: 999;
+
 }
 
 .popup-wrapper{
@@ -58,8 +63,21 @@ a:hover{
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.074)
 }
+
+.popup-switch{
+  font-size: 20px;
+  border-bottom: 2px solid #C1FF9C;
+  cursor: pointer;
+}
+
 .popup-wrapper h1{
   font-weight: bold;
+}
+
+.popup-button{
+  width: 100%;
+  margin-top: 35px;
+  cursor: pointer;
 }
 
 .user-input-box{
@@ -68,7 +86,7 @@ a:hover{
 
 .user-input-box p{
   font-size: 18px;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 4px;
 }
 
@@ -80,12 +98,9 @@ a:hover{
   outline: #363636;
   font-size: 16px;
   background-color: #363636;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.login-button{
-  width: 100%;
-  margin-top: 25px;
-}
 
 .hero-section{
   background-image: url(../../assets/world-bs-gery.jpg);
@@ -270,7 +285,7 @@ a:hover{
 
 .reviews-wrapper{
   gap: 30px; 
-  overflow-x: auto;
+  overflow-x: hidden;
   width: calc(100% + 160px);
 }
 
