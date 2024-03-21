@@ -36,8 +36,10 @@ const saveFlightId = (id) => {
 
 const validateSignup = async (username, email, password, conf_pass) => {
   signup_error.classList.add("invisible")
+
   if (username === "" || email === "" || password === "" || conf_pass === "") {
     signup_error.innerText = "Please Fill All fields"
+
     setTimeout(() => {
       signup_error.classList.remove("invisible")
     }, 200)
@@ -46,14 +48,17 @@ const validateSignup = async (username, email, password, conf_pass) => {
     if (password !== conf_pass) {
       signup_error.innerText = "Passwords Does Not Match"
       signup_error.classList.remove("invisible")
+
     } else {
       const user = await validateUserSignup(username, email, password)
+
       if (user.status === "success") {
         success_message.innerText = "Signup"
         setTimeout(() => {
           success.classList.toggle("hidden")
           login_popup.classList.toggle("hidden")
         }, 1200)
+
         signup_popup.classList.toggle("hidden")
         success.classList.toggle("hidden")
 
@@ -69,6 +74,7 @@ const validateSignup = async (username, email, password, conf_pass) => {
 
 const validateLogin = async (identifier, password) => {
   login_error.classList.add("invisible")
+
   if (identifier === "" || password === "") {
     login_error.innerText = "Please Fill All fields"
     setTimeout(() => {
@@ -77,9 +83,11 @@ const validateLogin = async (identifier, password) => {
 
   } else {
     const user = await validateUserLogin(identifier, password)
+
     if (user.status === "success") {
       if (user.is_admin == 1) {
         window.location.href = "http://127.0.0.1:5500/frontend/pages/admin-pannel.html"
+
       } else {
         success_message.innerText = "Login"
         setTimeout(() => {
@@ -91,6 +99,7 @@ const validateLogin = async (identifier, password) => {
         profile_img.classList.toggle("hidden")
         saveUser()
       }
+
     } else {
       setTimeout(() => {
         login_error.classList.remove("invisible")
@@ -156,18 +165,17 @@ const generateCard = (container, flight_id, destination, country, price) => {
   flightCard.appendChild(cardInfoWrapper);
 
   container.appendChild(flightCard);
-
 }
 
+const createFlightCards = async () => {
+  flight_cards_wrapper.innerHTML = ""
+  const flights = await getFlights("")
 
-flight_cards_wrapper.addEventListener("click", (element) => {
-  const target = element.target
-  if (target.classList.contains("book-btn")) {
-    const card = target.closest("flight-card")
-    // saveFlight(card)
-    console.log(card)
-  }
-})
+  flights.flights.forEach(flight => {
+    const { flight_id, destination, country, price } = flight
+    generateCard(flight_cards_wrapper, flight_id, destination, country, price)
+  });
+}
 
 
 popup_signup_button.addEventListener("click", () => {
