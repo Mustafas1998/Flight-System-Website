@@ -5,17 +5,17 @@ const heading_flight= document.getElementById('heading-flight');
 
 
 
-const displayFlightInfo = async (flight_id)=>{
-    const flightInfo = await getFlightInfo(flight_id);
-    console.log(flightInfo)
-     generateFlightInfo(flightInfo);
-
-}
-
 const generateFlightInfo = (flightInfo)=>{
-    console.log(flightInfo)
-    const {airline_name,airplane_model,arrival_date,departure_date,price,destination}=flightInfo
     container.innerHTML="";
+    const {
+        airline_name,
+        airplane_model,
+        arrival_date,
+        departure_date,
+        destination,
+        price} = flightInfo
+        // console.log(airline_name)
+   
     
     container.innerHTML=
      `<li>${airline_name}</li>
@@ -23,14 +23,20 @@ const generateFlightInfo = (flightInfo)=>{
         <li>${departure_date}</li>
         <li>${arrival_date}</li>
         <li>${price}</li>`;
-    ;
+    
+    heading_flight.innerText= destination
+}
 
-    heading_flight.innerText= flightInfo.destination
-        
+const displayFlightInfo = async (flight_id)=>{
+    const flightInfo = await getFlightInfo(flight_id);
+    console.log(flightInfo)
+     generateFlightInfo(flightInfo.flight);
+     
 
+}
+    
 
-
-
+displayFlightInfo(1)
 
 
 
@@ -58,10 +64,11 @@ const displaySeats = (data) => {
 seats.forEach(seat => {
     seat.addEventListener('click', (event) => {
         event.target.classList.add('bg-primary');
-        console.log("clicked")
+        
     });
 });
 
+fetchData()
 
 
 
@@ -86,4 +93,4 @@ bookButton.addEventListener("click",()=>{
         console.log(error)
 
     }
-})}
+})
