@@ -19,7 +19,8 @@ const displaySeats = (data) => {
     const seatNumbers = [];
     data.forEach(booking=> {
     seatNumbers.push(booking.seat_number);
-    console.log(seatNumbers)
+    console.log(seatNumbers);
+    
 });}
 
 
@@ -37,7 +38,7 @@ seats.forEach(seat => {
 
 
 // const displaySeats = (data) => {
-//     allSeats.forEach(seat => {
+//      seats.forEach(seat => {
 //         if (data.seat_number === seat.value) {
 //             seat.removeEventListener("click",()=>{
 //                 seat.classList.remove("bg-primary")
