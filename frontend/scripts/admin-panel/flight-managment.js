@@ -89,11 +89,7 @@ const validateAddInputs = () => {
   }
 }
 
-const clearInputFields = (inputs) => {
-  inputs.forEach(input => {
-    input.value = ""
-  });
-};
+load
 
 const generateFlightRow = (table, flight) => {
   table.innerHTML +=
