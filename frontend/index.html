@@ -15,19 +15,24 @@
 <body>
 
   <header>
+    <div class="flex center popup hidden"  id="success">
+      <div class="flex center popup-wrapper">
+        <p class="white success-message"><span id="success-message">Signup</span> SUCCESS</p>
+      </div>
+    </div>
+
     <div class="flex center popup hidden" id="login-popup">
       
       <div class="flex column align-center popup-wrapper">
         <h1 class="white">Login</h1>
         <div class="user-input-box">
-         
-          <p>Username/Email</p>
+          <p class="white-op-80">Username/Email</p>
           <input type="text" placeholder="Example@gmail.com" id="login-identifier-input">
         </div>
         <div class="user-input-box">
-          <p>Password</p>
+          <p class="white-op-80">Password</p>
           <input type="password" placeholder="Password" id="login-pass-input">
-          <p class="red invisible" id="signup-error">Incorrect Username/Password</p>
+          <p class="incorrect-login invisible red" id="login-error">Incorrect Username/Password</p>
         </div>
         <button class="popup-button bg-primary" id="popup-login-button">Login</button>
         <p class="white ">Don’t Have An Account? <span class="popup-switch primary-color" id="login-switch">Signup</span></p>
@@ -39,24 +44,25 @@
       <div class="flex column align-center popup-wrapper">
         <h1 class="white">Signup</h1>
         <div class="user-input-box">
-          <p class="red invisible" id="signup-error"></p>
-          <p>Username</p>
+          
+          <p class="white-op-80">Username</p>
           <input type="text" placeholder="Username" id="signup-username-input">
         </div>
         <div class="user-input-box">
-          <p>Email</p>
+          <p class="white-op-80">Email</p>
           <input type="text" placeholder="Example@gmail.com" id="signup-email-input">
         </div>
         <div class="user-input-box">
-          <p>Password</p>
+          <p class="white-op-80">Password</p>
           <input type="password" placeholder="Password" id="signup-pass-input">
         </div>
         <div class="user-input-box">
-          <p>Confirm Password</p>
+          <p class="white-op-80">Confirm Password</p>
           <input type="password" placeholder="Confirm Password" id="signup-conf-pass-input">
+          <p class="red invisible " id="signup-error">User Already Exists</p>
         </div>
         <button class="popup-button bg-primary" id="popup-signup-button">Signup</button>
-        <p class="white">Already Have An Account? <span class="popup-switch primary-color" id="signup-switch">Signup</span></p>
+        <p class="white">Already Have An Account? <span class="popup-switch primary-color" id="signup-switch">Login</span></p>
       </div>
     </div>
     
@@ -111,122 +117,9 @@
     <section class="flight-cards-section">
       <div class=" flex column center flight-cards-container">
         <h1 class="white ">Most Popular</h1>
-        <div class="flex center wrap cards-wrapper">
+        <div class="flex center wrap cards-wrapper" id="flight-cards-wrapper">
           <!-- cards starts here -->
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
-          <div class="flex column flight-card white">
-            <div class="flex rating-wrapper" >
-              <p class="flex avg-rating"> 4.5</p>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="card-img">
-              <img src="./assets/tokyo.jpg" alt="tokyo">
-            </div>
-            <div class="flex space-between card-info-wrapper">
-              <div class=" flex column destination-info">
-                <div>
-                  <p class="destination" >Tokyo</p>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Japan</p>
-                </div>
-                <p class="price">50c</p>
-              </div>
-              <button class="book-btn bg-primary">Book</button>
-            </div>
-          </div>
+          
           <!-- cards ends here -->
         </div>
       </div>
@@ -248,24 +141,6 @@
         <h1>Don’t Trust Us, Trust Our Customers</h1>
         <div class="flex  reviews-wrapper">
           <!-- review cards starts here -->
-          <div class="review-card-holder">
-            <div class="flex column review-card">
-              <div class="flex space-between">
-                <div class="flex align-center user-info">
-                  <img class="profile" src="./assets/profile-white-bg.jpeg" alt="profile">
-                  <p>username</p>
-                </div>
-                <div class="flex column align-end review-rating">
-                  <div class="flex rating-wrapper-reviews" >
-                    <p class="flex avg-rating"> 4.5</p>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <p class="review-flight primary-color">New York</p>
-                </div>
-              </div>
-              <p>Smooth booking process, efficient check-in, and pleasant flight experience. Would fly again.</p>
-            </div>
-          </div>
           <div class="review-card-holder">
             <div class="flex column review-card">
               <div class="flex space-between">
@@ -449,6 +324,7 @@
 
     </div>
   </footer>
+  <script src="./scripts/APIs.js"></script>
   <script src="./scripts/main.js"></script>
 </body>
 </html>
