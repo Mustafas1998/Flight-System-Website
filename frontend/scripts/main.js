@@ -25,6 +25,8 @@ const saveUser = (id) => {
   localStorage.setItem("user_id", id)
 }
 
+
+
 const validateLogin = async (identifier, password) => {
   login_error.classList.add("invisible")
   if (identifier === "" || password === "") {

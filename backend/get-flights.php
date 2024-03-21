@@ -43,7 +43,7 @@ if ($num_rows === 0) {
 	if ($found){
 		$response["flight"] = $flight;
 	}else{
-		$response["flights"] = $flight_list;
+		$response["flights"] = $flights_list;
 
 	}
 }

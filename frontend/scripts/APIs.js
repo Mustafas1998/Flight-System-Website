@@ -77,7 +77,7 @@ const getFlights = async (flight_id) => {
 
 const getFlightsAdmin = async () => {
   try {
-    const result = await fetch('http://127.0.0.1/Flight-System-Website/backend/get-flights-admin.php', {
+    const result = await fetch('http://127.0.0.1/Flight-System-Website/backend/get-flights-info.php', {
       method: 'GET',
     });
     const response = await result.json()
@@ -94,6 +94,23 @@ const validateUserLogin = async (identefier, password) => {
     form_data.append("identifier", identefier)
     form_data.append("password", password)
     const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/login.php", {
+      method: 'POST',
+      body: form_data
+    });
+    const response = await result.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const validateUserSignup = async (username, email, password) => {
+  try {
+    const form_data = new FormData()
+    form_data.append("username", username)
+    form_data.append("email", email)
+    form_data.append("password", password)
+    const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/signup.php", {
       method: 'POST',
       body: form_data
     });
