@@ -11,7 +11,7 @@ if(filter_var($identifier, FILTER_VALIDATE_EMAIL)){
   where email = ?");
 }else{
   $query = $mysqli->prepare("
-  select user_id, user_password 
+  select user_id, user_password, is_admin
   from users 
   where username = ?");
 }
@@ -19,7 +19,7 @@ if(filter_var($identifier, FILTER_VALIDATE_EMAIL)){
 $query->bind_param("s", $identifier);
 $query->execute();
 $query->store_result();
-$query->bind_result($id, $hashed_password);
+$query->bind_result($id, $hashed_password, $is_admin);
 $query->fetch();
 $num_rows = $query->num_rows();
 
@@ -29,6 +29,7 @@ if ($num_rows == 0){
   if (password_verify($password, $hashed_password)){
     $response['status'] = "success";
     $response['user_id'] = $id;
+    $response['is_admin'] = $is_admin;
   }else{
     $response['status'] = "incorrect credentials";
   }

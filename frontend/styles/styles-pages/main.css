@@ -76,7 +76,7 @@ a:hover{
 
 .popup-button{
   width: 100%;
-  margin-top: 35px;
+  margin-top: 25px;
   cursor: pointer;
 }
 
@@ -86,7 +86,6 @@ a:hover{
 
 .user-input-box p{
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 4px;
 }
 
@@ -98,7 +97,11 @@ a:hover{
   outline: #363636;
   font-size: 16px;
   background-color: #363636;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffffcc;
+}
+
+.success-message{
+  font-size: 36px;
 }
 
 
