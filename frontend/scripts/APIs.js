@@ -68,6 +68,7 @@ const getFlights = async (flight_id) => {
       method: 'GET',
     });
     const response = await result.json()
+    console.log(response)
     return response
   } catch (error) {
     console.error(error)

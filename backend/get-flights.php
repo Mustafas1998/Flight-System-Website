@@ -12,40 +12,39 @@ if($flight_id){
 
 }else{
 	$query = $mysqli->prepare("SELECT * FROM flights WHERE flight_status = ?");
+	$query -> bind_param("s", $flight_status);
 }
 $query->execute();
 $query->store_result();
 $num_rows = $query->num_rows();
 
 if ($num_rows === 0) {
-  $response["status"] = "empty";
-	$response['messgae'] = "no flights found";
-}else{
+	$response['status'] = "failed";
+	$response['message'] = "no flights found";
+} else {
 	$flights_list = [];
-	$query->bind_result($flight_id,$destintion,$country,$price,$departure_date,$arrival_date,$flight_status,$airline_id,$departure_airport_id,$arrival_airport_id,$airplane_id);
-	while ($query->fetch()){
+	$query->bind_result($flight_id, $destination, $country, $price, $airline_name, $model, $dep_airport_name, $dep_date, $arr_airport_name, $arr_date, $status);
+	while ($query->fetch()) {
 			$flight = [
-					"flight_id"=> $flight_id,
-					"destination"=> $destintion,
-					"country"=> $country,
-					"price"=> $price,
-					"departure_date"=> $departure_date,
-					"arrival_date" => $arrival_date,
-					"flight_status"=> $flight_status,
-					"airline_id"=> $airline_id,
-					"departure_airport_id"=> $departure_airport_id,
-					"arrival_airport_id"=> $arrival_airport_id,
-					"airplane_id"=> $airplane_id,  
+					"flight_id" => $flight_id,
+					"destination" => $destination,
+					"country" => $country,
+					"airline_name" => $airline_name,
+					"airplane_model" => $model,
+					"departure_airport_name" => $dep_airport_name,
+					"departure_date" => $dep_date,
+					"arrival_airport_name" => $arr_airport_name,
+					"arrival_date" => $arr_date,
+					"status" => $status,
+					"price" => $price
 			];
-			$flight_list[] = $flight;	
+			$flights_list[] = $flight;
 	}
-	$response["status"] = "success";
-
-	if ($found){
-		$response["flight"] = $flight;
-	}else{
-		$response["flights"] = $flights_list;
-
+	$response['status'] = "success";
+	if ($found) {
+			$response["flight"] = $flight; // Move this line inside the if condition
+	} else {
+			$response["flights"] = $flights_list;
 	}
 }
 

@@ -23,9 +23,15 @@ const signup_error = document.getElementById("signup-error")
 const success = document.getElementById("success")
 const success_message = document.getElementById("success-message")
 
+const flight_cards_wrapper = document.getElementById("flight-cards-wrapper")
+
 
 const saveUser = (id) => {
   localStorage.setItem("user_id", id)
+}
+
+const saveFlightId = (id) => {
+  localStorage.setItem("flight_id", id)
 }
 
 const validateSignup = async (username, email, password, conf_pass) => {
@@ -95,6 +101,74 @@ const validateLogin = async (identifier, password) => {
 }
 
 
+const generateCard = (container, flight_id, destination, country, price) => {
+  const flightCard = document.createElement("div");
+  flightCard.classList.add("flex", "column", "flight-card", "white");
+  flightCard.id = flight_id;
+
+  const ratingWrapper = document.createElement("div");
+  ratingWrapper.classList.add("flex", "rating-wrapper");
+  const avgRating = document.createElement("p");
+  avgRating.classList.add("flex", "avg-rating");
+  avgRating.textContent = "4.5";
+  const starIcon = document.createElement("i");
+  starIcon.classList.add("fa-solid", "fa-star");
+  ratingWrapper.appendChild(avgRating);
+  ratingWrapper.appendChild(starIcon);
+
+  const cardImg = document.createElement("div");
+  cardImg.classList.add("card-img");
+  const img = document.createElement("img");
+  img.src = "./assets/tokyo.jpg";
+  img.alt = "tokyo";
+  cardImg.appendChild(img);
+
+  const cardInfoWrapper = document.createElement("div");
+  cardInfoWrapper.classList.add("flex", "space-between", "card-info-wrapper");
+  const destinationInfo = document.createElement("div");
+  destinationInfo.classList.add("flex", "column", "destination-info");
+  const destinationP = document.createElement("p");
+  destinationP.classList.add("destination");
+  destinationP.textContent = destination;
+  const countryP = document.createElement("p");
+  countryP.classList.add("country");
+  countryP.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${country}`;
+  const priceP = document.createElement("p");
+  priceP.classList.add("price");
+  priceP.textContent = price + "c";
+  destinationInfo.appendChild(destinationP);
+  destinationInfo.appendChild(countryP);
+  destinationInfo.appendChild(priceP);
+
+  const bookButton = document.createElement("button");
+  bookButton.classList.add("book-btn", "bg-primary");
+  bookButton.textContent = "Book";
+  bookButton.addEventListener("click", () => {
+    saveFlightId(flight_id)
+    window.location.href = "http://127.0.0.1:5500/frontend/pages/bookings.html"
+  })
+
+  cardInfoWrapper.appendChild(destinationInfo);
+  cardInfoWrapper.appendChild(bookButton);
+
+  flightCard.appendChild(ratingWrapper);
+  flightCard.appendChild(cardImg);
+  flightCard.appendChild(cardInfoWrapper);
+
+  container.appendChild(flightCard);
+
+}
+
+
+flight_cards_wrapper.addEventListener("click", (element) => {
+  const target = element.target
+  if (target.classList.contains("book-btn")) {
+    const card = target.closest("flight-card")
+    // saveFlight(card)
+    console.log(card)
+  }
+})
+
 
 popup_signup_button.addEventListener("click", () => {
   validateSignup(
@@ -139,6 +213,4 @@ signup_switch.addEventListener("click", (event) => {
   signup_popup.classList.toggle("hidden")
 })
 
-
-
-
+createFlightCards()
