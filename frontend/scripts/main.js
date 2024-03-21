@@ -20,12 +20,46 @@ const signup_conf_pass_input = document.getElementById("signup-conf-pass-input")
 const popup_signup_button = document.getElementById("popup-signup-button")
 const signup_error = document.getElementById("signup-error")
 
+const success = document.getElementById("success")
+const success_message = document.getElementById("success-message")
+
 
 const saveUser = (id) => {
   localStorage.setItem("user_id", id)
 }
 
+const validateSignup = async (username, email, password, conf_pass) => {
+  signup_error.classList.add("invisible")
+  if (username === "" || email === "" || password === "" || conf_pass === "") {
+    signup_error.innerText = "Please Fill All fields"
+    setTimeout(() => {
+      signup_error.classList.remove("invisible")
+    }, 200)
 
+  } else {
+    if (password !== conf_pass) {
+      signup_error.innerText = "Passwords Does Not Match"
+      signup_error.classList.remove("invisible")
+    } else {
+      const user = await validateUserSignup(username, email, password)
+      if (user.status === "success") {
+        success_message.innerText = "Signup"
+        setTimeout(() => {
+          success.classList.toggle("hidden")
+          login_popup.classList.toggle("hidden")
+        }, 1200)
+        signup_popup.classList.toggle("hidden")
+        success.classList.toggle("hidden")
+
+      } else {
+        setTimeout(() => {
+          signup_error.classList.remove("invisible")
+        }, 200)
+        signup_error.innerText = "User Aleady Exists"
+      }
+    }
+  }
+}
 
 const validateLogin = async (identifier, password) => {
   login_error.classList.add("invisible")
@@ -41,20 +75,35 @@ const validateLogin = async (identifier, password) => {
       if (user.is_admin == 1) {
         window.location.href = "http://127.0.0.1:5500/frontend/pages/admin-pannel.html"
       } else {
+        success_message.innerText = "Login"
+        setTimeout(() => {
+          success.classList.toggle("hidden")
+        }, 1200);
+        success.classList.toggle("hidden")
         login_popup.classList.toggle("hidden")
         login_signup_wrapper.classList.toggle("hidden")
         profile_img.classList.toggle("hidden")
         saveUser()
       }
+    } else {
+      setTimeout(() => {
+        login_error.classList.remove("invisible")
+      }, 200)
+      login_error.innerText = "Incorrect Username/Password"
     }
   }
 }
 
+
+
+popup_signup_button.addEventListener("click", () => {
+  validateSignup(
+    signup_username_input.value,
+    signup_email_input.value,
+    signup_pass_input.value,
+    signup_conf_pass_input.value)
+})
 popup_login_button.addEventListener("click", () => {
-  console.log("clicked")
-  console.log(login_identifier_input.value, login_pass_input.value)
-  console.log(login_identifier_input.value)
-  console.log(typeof (login_identifier_input.value))
   validateLogin(login_identifier_input.value, login_pass_input.value)
 })
 

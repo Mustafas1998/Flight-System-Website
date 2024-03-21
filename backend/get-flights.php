@@ -2,15 +2,16 @@
 include("connection.php");
 
 $flight_id = isset($_GET['flight_id']) ? $_GET['flight_id'] : false;
+$flight_status ="Ready";
 $found = false;
 
 if($flight_id){
-	$query = $mysqli->prepare("SELECT * FROM flights WHERE flight_id = ?");
-	$query -> bind_param("i", $flight_id);
+	$query = $mysqli->prepare("SELECT * FROM flights WHERE flight_id = ? and flight_status = ?");
+	$query -> bind_param("is", $flight_id, $flight_status);
 	$found = true;
 
 }else{
-	$query = $mysqli->prepare("SELECT * FROM flights");
+	$query = $mysqli->prepare("SELECT * FROM flights WHERE flight_status = ?");
 }
 $query->execute();
 $query->store_result();

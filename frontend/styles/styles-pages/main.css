@@ -100,7 +100,9 @@ a:hover{
   color: #ffffffcc;
 }
 
-
+.success-message{
+  font-size: 36px;
+}
 
 
 .hero-section{

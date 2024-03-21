@@ -15,6 +15,12 @@
 <body>
 
   <header>
+    <div class="flex center popup hidden"  id="success">
+      <div class="flex center popup-wrapper">
+        <p class="white success-message"><span id="success-message">Signup</span> SUCCESS</p>
+      </div>
+    </div>
+
     <div class="flex center popup hidden" id="login-popup">
       
       <div class="flex column align-center popup-wrapper">
@@ -38,7 +44,7 @@
       <div class="flex column align-center popup-wrapper">
         <h1 class="white">Signup</h1>
         <div class="user-input-box">
-          <p class="red invisible " id="signup-error"></p>
+          
           <p class="white-op-80">Username</p>
           <input type="text" placeholder="Username" id="signup-username-input">
         </div>
@@ -53,7 +59,7 @@
         <div class="user-input-box">
           <p class="white-op-80">Confirm Password</p>
           <input type="password" placeholder="Confirm Password" id="signup-conf-pass-input">
-          <p class="red incorrect-signup" id="signup-error">User Already Exists</p>
+          <p class="red invisible " id="signup-error">User Already Exists</p>
         </div>
         <button class="popup-button bg-primary" id="popup-signup-button">Signup</button>
         <p class="white">Already Have An Account? <span class="popup-switch primary-color" id="signup-switch">Login</span></p>
