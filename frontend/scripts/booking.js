@@ -1,10 +1,39 @@
 const seats=document.querySelectorAll(".seat");
 const bookButton= document.getElementById("bookBtn");
+const container = document.querySelector('.booking-info');
+const heading_flight= document.getElementById('heading-flight');
 
-//i should get flights and destructure to get flight-id
 
 
-//get and display bookings according to each flight
+const displayFlightInfo = async (flight_id)=>{
+    const flightInfo = await getFlightInfo(flight_id);
+    console.log(flightInfo)
+     generateFlightInfo(flightInfo);
+
+}
+
+const generateFlightInfo = (flightInfo)=>{
+    console.log(flightInfo)
+    const {airline_name,airplane_model,arrival_date,departure_date,price,destination}=flightInfo
+    container.innerHTML="";
+    
+    container.innerHTML=
+     `<li>${airline_name}</li>
+        <li>${airplane_model}</li>
+        <li>${departure_date}</li>
+        <li>${arrival_date}</li>
+        <li>${price}</li>`;
+    ;
+
+    heading_flight.innerText= flightInfo.destination
+        
+
+
+
+
+
+
+
 const fetchData =async ()=> {
     try {
         const response = await axios.get("http://localhost/Flight-System-Website/backend/getBookings.php");
@@ -37,27 +66,6 @@ seats.forEach(seat => {
 
 
 
-// const displaySeats = (data) => {
-//      seats.forEach(seat => {
-//         if (data.seat_number === seat.value) {
-//             seat.removeEventListener("click",()=>{
-//                 seat.classList.remove("bg-primary")
-//             }
-//                 )
-//         } else {
-//             bookSeat(); 
-//             }
-//         });
-//     }
-
-// const bookSeat = (allSeats) => {
-//         allSeats.forEach(seat => {
-//             const addBgColor = () => {
-//                 seat.classList.add("bg-primary");
-//             };
-//             seat.addEventListener("click", addBgColor);
-//         });
-//     }
 
 //save booking
 bookButton.addEventListener("click",()=>{
@@ -78,4 +86,4 @@ bookButton.addEventListener("click",()=>{
         console.log(error)
 
     }
-})
+})}
