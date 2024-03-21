@@ -94,7 +94,7 @@ const validateUserLogin = async (identefier, password) => {
     const form_data = new FormData()
     form_data.append("identifier", identefier)
     form_data.append("password", password)
-    const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/login.php", {
+    const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/login.php?", {
       method: 'POST',
       body: form_data
     });
@@ -121,4 +121,18 @@ const validateUserSignup = async (username, email, password) => {
     console.error(error)
   }
 }
+
+const getFlightInfo= async(flight_id) =>{
+  try {
+    const result = await fetch(`http://localhost/Flight-System-Website/backend/get-flights-info.php?flight_id=${flight_id}`, {
+      method: 'GET',
+    });
+    const response = await result.json()
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+
 

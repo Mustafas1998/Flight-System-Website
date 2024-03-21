@@ -1,10 +1,45 @@
 const seats=document.querySelectorAll(".seat");
 const bookButton= document.getElementById("bookBtn");
+const container = document.querySelector('.booking-info');
+const heading_flight= document.getElementById('heading-flight');
 
-//i should get flights and destructure to get flight-id
 
 
-//get and display bookings according to each flight
+const generateFlightInfo = (flightInfo)=>{
+    container.innerHTML="";
+    const {
+        airline_name,
+        airplane_model,
+        arrival_date,
+        departure_date,
+        destination,
+        price} = flightInfo
+        // console.log(airline_name)
+   
+    
+    container.innerHTML=
+     `<li>${airline_name}</li>
+        <li>${airplane_model}</li>
+        <li>${departure_date}</li>
+        <li>${arrival_date}</li>
+        <li>${price}</li>`;
+    
+    heading_flight.innerText= destination
+}
+
+const displayFlightInfo = async (flight_id)=>{
+    const flightInfo = await getFlightInfo(flight_id);
+    console.log(flightInfo)
+     generateFlightInfo(flightInfo.flight);
+     
+
+}
+    
+
+displayFlightInfo(1)
+
+
+
 const fetchData =async ()=> {
     try {
         const response = await axios.get("http://localhost/Flight-System-Website/backend/getBookings.php");
@@ -29,35 +64,15 @@ const displaySeats = (data) => {
 seats.forEach(seat => {
     seat.addEventListener('click', (event) => {
         event.target.classList.add('bg-primary');
-        console.log("clicked")
+        
     });
 });
 
+fetchData()
 
 
 
 
-// const displaySeats = (data) => {
-//      seats.forEach(seat => {
-//         if (data.seat_number === seat.value) {
-//             seat.removeEventListener("click",()=>{
-//                 seat.classList.remove("bg-primary")
-//             }
-//                 )
-//         } else {
-//             bookSeat(); 
-//             }
-//         });
-//     }
-
-// const bookSeat = (allSeats) => {
-//         allSeats.forEach(seat => {
-//             const addBgColor = () => {
-//                 seat.classList.add("bg-primary");
-//             };
-//             seat.addEventListener("click", addBgColor);
-//         });
-//     }
 
 //save booking
 bookButton.addEventListener("click",()=>{

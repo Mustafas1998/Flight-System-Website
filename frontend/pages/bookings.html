@@ -36,10 +36,10 @@
         </div>
       </header>
       
-      <h2>TOKYO</h2>
+      <h2 id="heading-flight"> TOKYO</h2>
       <main class="main-wrapper padding-20-80 flex row space-evenly">
         <section >
-        <div class="booking-info flex row gap-20 ">
+        <div class="booking-info-container flex row gap-20 ">
 
             <ul class="titles-info flex column gap-10 no-style primary-color">
                 <li>Airline:</li>
@@ -47,9 +47,7 @@
                 <li>Departure:</li>
                 <li>Arrival:</li>
                 <li>Price:</li>
-
-                
-
+ 
             </ul>
             <ul class="booking-info flex column gap-10 no-style white">
                 <li>MEA</li>
@@ -65,7 +63,7 @@
 
         <div class="seat-info flex center">
             <div class="container flex center">
-                <div id="1" class="seat"></div>
+                <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -120,8 +118,10 @@
 
       </main>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="../scripts/APIs.js"></script>
 
-      <script src="./scripts/booking.js"></script>
+
+      <script src="../scripts/booking.js"></script>
 
 </body>
 </html>
