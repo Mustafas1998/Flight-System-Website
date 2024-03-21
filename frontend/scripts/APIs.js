@@ -10,6 +10,7 @@ const getFlightInputs = async () => {
   }
 }
 
+
 const getDashboardNumbers = async () => {
   try {
     const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/get-dashboard-numbers.php", {
@@ -22,8 +23,8 @@ const getDashboardNumbers = async () => {
   }
 }
 
+
 const saveFlight = async (flight) => {
-  console.log(flight)
   try {
     const {
       destination,
@@ -48,8 +49,6 @@ const saveFlight = async (flight) => {
     form_data.append("arrival_airport_id", arrival_airport_id)
     form_data.append("airplane_id", parseFloat(airplane_id))
 
-    console.log(form_data)
-
     const result = await fetch("http://127.0.0.1/Flight-System-Website/backend/save-flight.php", {
       method: 'POST',
       body: form_data,
@@ -61,6 +60,7 @@ const saveFlight = async (flight) => {
     console.error(error)
   }
 }
+
 
 const getFlights = async (flight_id) => {
   try {
@@ -74,18 +74,19 @@ const getFlights = async (flight_id) => {
   }
 }
 
+
 const getFlightsAdmin = async () => {
   try {
     const result = await fetch('http://127.0.0.1/Flight-System-Website/backend/get-flights-admin.php', {
       method: 'GET',
     });
     const response = await result.json()
-    console.log(response)
     return response
   } catch (error) {
     console.error(error)
   }
 }
+
 
 const validateLogin = async (identefier, password) => {
   try {

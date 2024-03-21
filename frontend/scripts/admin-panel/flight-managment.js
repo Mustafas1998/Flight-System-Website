@@ -89,8 +89,6 @@ const validateAddInputs = () => {
   }
 }
 
-load
-
 const generateFlightRow = (table, flight) => {
   table.innerHTML +=
     `<tr>
