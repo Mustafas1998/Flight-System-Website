@@ -88,7 +88,7 @@ const getFlightsAdmin = async () => {
 }
 
 
-const validateLogin = async (identefier, password) => {
+const validateUserLogin = async (identefier, password) => {
   try {
     const form_data = new FormData()
     form_data.append("identifier", identefier)
