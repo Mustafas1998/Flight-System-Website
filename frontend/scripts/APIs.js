@@ -74,12 +74,13 @@ const getFlights = async (flight_id) => {
   }
 }
 
-const getFlightsAdmin = async (flight_id) => {
+const getFlightsAdmin = async () => {
   try {
-    const result = await fetch(`http://127.0.0.1/Flight-System-Website/backend/get-flights_admin.php`, {
+    const result = await fetch('http://127.0.0.1/Flight-System-Website/backend/get-flights-admin.php', {
       method: 'GET',
     });
     const response = await result.json()
+    console.log(response)
     return response
   } catch (error) {
     console.error(error)

@@ -34,7 +34,6 @@ const empty_field = document.getElementById('empty-field')
 
 const loadDashboard = async () => {
   const dashboard = await getDashboardNumbers()
-  console.log(dashboard)
   total_bookings.innerText = dashboard.total_bookings
   total_flights.innerText = dashboard.total_flights
   total_users.innerText = dashboard.total_users
@@ -49,12 +48,10 @@ const generateOptions = (container, options) => {
 
 const loadFlightInputs = async () => {
   const flight_inputs = await getFlightInputs()
-  console.log(flight_inputs)
   generateOptions(airline_input, flight_inputs.airlines)
   generateOptions(airplane_input, flight_inputs.airplanes)
   generateOptions(dep_airport_input, flight_inputs.airports)
   generateOptions(arr_airport_input, flight_inputs.airports)
-  console.log(typeof (dep_date_input.value), dep_time_input.value, typeof (price_input.value))
 }
 
 const validateAddInputs = () => {
@@ -77,7 +74,7 @@ const validateAddInputs = () => {
   if (empty_inputs.length > 0) {
     empty_field.classList.remove("invisible")
   } else {
-    const flight_data = {
+    const flight = {
       destination: destination_input.value,
       country: country_input.value,
       price: price_input.value,
@@ -88,44 +85,42 @@ const validateAddInputs = () => {
       airline_id: airline_input.value,
       airplane_id: airplane_input.value
     };
-    console.log(flight_data)
-    saveFlight(flight_data)
+    saveFlight(flight)
   }
 }
-
-const generateFlightRow = (table, flight) => {
-  table.innerHTML +=
-    `<tr>
-      <td>${flight.destination}</td>
-      <td>${flight.country}</td>
-      <td>${flight.price}</td>
-      <td>${flight.airline_name}</td>
-      <td>${flight.airplane_model}</td>
-      <td>${flight.destination}</td>
-      <td>${flight.destination}</td>
-      <td>${flight.destination}</td>
-      <td>${flight.destination}</td>
-      <td>${flight.destination}</td>
-      <td>${flight.destination}</td>
-      <td><button class="flight-edit">Edit</button></td>
-      <td><button class="flight-cancel">Cancel</button></td>
-    </tr >`
-}
-
-// const loadFlights = async () => {
-//   flights_table.innerHTML = ""
-//   const flights = await getFlights("")
-//   flights.forEach((flight) => {
-
-//   })
-// }
-
 
 const clearInputFields = (inputs) => {
   inputs.forEach(input => {
     input.value = ""
   });
 };
+
+const generateFlightRow = (table, flight) => {
+  table.innerHTML +=
+    `<tr>
+      <td>${flight.flight_id}</td>
+      <td>${flight.destination}</td>
+      <td>${flight.country}</td>
+      <td>${flight.airline_name}</td>
+      <td>${flight.airplane_model}</td>
+      <td>${flight.departure_airport_name}</td>
+      <td>${flight.departure_date}</td>
+      <td>${flight.arrival_airport_name}</td>
+      <td>${flight.arrival_date}</td>
+      <td>${flight.status}</td>
+      <td>${flight.price}</td>
+      <td><button class="flight-edit">Edit</button></td>
+      <td><button class="flight-cancel">Cancel</button></td>
+    </tr >`
+}
+
+const loadFlights = async () => {
+  flights_table.innerHTML = ""
+  const flights_list = await getFlightsAdmin()
+  flights_list.flights.forEach((flight) => {
+    generateFlightRow(flights_table, flight)
+  })
+}
 
 add_flight.addEventListener("click", () => {
   validateAddInputs()
